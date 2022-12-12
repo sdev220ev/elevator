@@ -91,6 +91,7 @@ class StepperDriverClass():
 				# Keep stepping in same direction.
 				# Set the RPi 4 output pins the the values in the current sequence item.
 				# Move motor one step.
+				print ('moving motor one step')
 				for pin in range(0, 4):
 					xpin = self.stepMotorPins[pin]
 					if self.Seq[stepSeqCounter][pin] != 0:
