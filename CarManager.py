@@ -81,7 +81,7 @@ def CarManager():
 	#cycle door and leave open (we start on the bottom floor
 	#print ('CarManager: Cycling door')
 	#cdm.CarDoorManager(Door, 'open')
-	#time.sleep(1)
+	time.sleep(1)
 	#cdm.CarDoorManager(Door, 'close')
 	#print ('CarManager: Door Cycling Completed')
 		
