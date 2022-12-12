@@ -91,7 +91,7 @@ def CarManager():
 	
 	# To work in a multi-elevator environment, we need to tell the master controller of this elevator posiion and direction
 	#  The IP address of the master controller is stored in the configuration file
-	cfm.GetMasterIP() # Get the IP address of the Master controller.
+	#cfm.GetMasterIP() # Get the IP address of the Master controller.
 	
 	# This call will start a separate thread that will listen to commands from the master controller
 	#nl.udpListenerMain()
