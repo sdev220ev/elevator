@@ -35,13 +35,14 @@ GPIO.setup(rolePinIO,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # Jumper will pull the port to ground (0 Volts) --> false.
 
 print('StartUp: Starting... Detect role of the computer')
-
+config.Role = 'car'
+cm.CarManager() # CarManager is called.
+'''
 if GPIO.input(rolePinIO) == True:
 	print ('Input is not jumpered to ground, role is Master.')
 	config.Role = 'master'
 	hm.HallManager() # HallManager is called
 else:
 	print ('Input is jumpered to ground, Role is car.')
-	config.Role = 'car'
-	cm.CarManager() # CarManager is called.
+'''
 
