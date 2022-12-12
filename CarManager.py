@@ -94,7 +94,7 @@ def CarManager():
 	cfm.GetMasterIP() # Get the IP address of the Master controller.
 	
 	# This call will start a separate thread that will listen to commands from the master controller
-	nl.udpListenerMain()
+	#nl.udpListenerMain()
 	
 	
 	# Begin car intialization to find the stepper motor steps required to move the car to the top floor
