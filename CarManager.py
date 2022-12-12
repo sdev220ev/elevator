@@ -19,11 +19,11 @@ import config
 import RPi.GPIO as GPIO
 
 from StepperDriverClass import StepperDriverClass
-import CarLampManager as clm
-import CarButtonCallBack
-import CarButtonInitialize
-import CarLampInitialize
-import CarDoorManager  as cdm
+#import CarLampManager as clm
+#import CarButtonCallBack
+#import CarButtonInitialize
+#import CarLampInitialize
+#import CarDoorManager  as cdm
 import CarFindMaster   as cfm
 import NetworkListener as nl
 
