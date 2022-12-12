@@ -70,7 +70,8 @@ def CarManager():
 	topFloor = config.TopFloor
 	bottomFloor = config.BottomFloor
 	totalSteps = 0
-
+	GPIO.setmode(GPIO.BOARD)
+	GPIO.setwarnings(False)
 	CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
 	CarButtonInitialize.CarButtonInitialize() # Set the car buttons for callbacks	.
 
