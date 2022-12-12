@@ -22,7 +22,7 @@ from StepperDriverClass import StepperDriverClass
 #import CarLampManager as clm
 #import CarButtonCallBack
 #import CarButtonInitialize
-#import CarLampInitialize
+import CarLampInitialize
 #import CarDoorManager  as cdm
 import CarFindMaster   as cfm
 import NetworkListener as nl
@@ -71,7 +71,7 @@ def CarManager():
 	bottomFloor = config.BottomFloor
 	totalSteps = 0
 
-	#CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
+	CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
 	#CarButtonInitialize.CarButtonInitialize() # Set the car buttons for callbacks	.
 
 	# The stepper driver is a class. Create an instance for the lift stepper motor and one for the door stepper motor.
