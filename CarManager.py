@@ -86,7 +86,7 @@ def CarManager():
 	GPIO.setwarnings(False)
 	#CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
 	#CarButtonInitialize.CarButtonInitialize() # Set the car buttons for callbacks	.
-	'''
+	
 	# ========================================================================
 	broker ="10.81.104.102"
 	client = mqtt.Client("")
@@ -94,7 +94,7 @@ def CarManager():
 	client.connect(broker)
 	#client.loop_start()
 	info = client.subscribe("EL1/command/#")
-	'''
+	
 	
 	# The stepper driver is a class. Create an instance for the lift stepper motor and one for the door stepper motor.
 	Car = StepperDriverClass(id, [31,29,7,5], 26, 24 ) # Create an instance of the stepper motor driver.
