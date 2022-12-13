@@ -19,7 +19,7 @@ import config
 import RPi.GPIO as GPIO
 import paho.mqtt.client as mqtt
 import time
-from callbacks import *
+#from callbacks import *
 
 from StepperDriverClass import StepperDriverClass
 #import CarLampManager as clm
@@ -33,6 +33,15 @@ from StepperDriverClass import StepperDriverClass
 import socket
 # Generic method to send a text message to the ip address in the method.
 #  All information sent must be changed (encoded) to byte code
+def on_message_elevator(client, userdata, msg):
+	#callback when a new message is posted on MQTT server
+	#print("message qos=",msg.qos)
+	#print("message retain flag=",msg.retain)
+
+	payload = msg.payload.decode('utf-8')
+	topic = msg.topic
+	print('MQTT Controller: ' + topic.ljust(25," "), payload.ljust(20," "))
+
 def send(message, ip, port = 5005):
 	#print ('Send: ', ip, port)
 	messageBytes = message.encode() 				# message is encoded into byte code for transmission
@@ -78,6 +87,14 @@ def CarManager():
 	#CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
 	#CarButtonInitialize.CarButtonInitialize() # Set the car buttons for callbacks	.
 
+	client = mqtt.Client("")
+	client.message_callback_add('EL1/#', on_message_elevator)
+	client.connect(broker)
+
+	#client.loop_start()
+	info = client.subscribe("EL1/command/#")
+	
+	
 	# The stepper driver is a class. Create an instance for the lift stepper motor and one for the door stepper motor.
 	Car = StepperDriverClass(id, [31,29,7,5], 26, 24 ) # Create an instance of the stepper motor driver.
 	Door = StepperDriverClass(id, [37,22,19,21], 32, 23 ) # Create an instance of the stepper motor driver.
