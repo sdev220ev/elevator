@@ -89,6 +89,7 @@ def CarManager():
 	
 	# ========================================================================
 	broker ="10.81.104.102"
+	broker ="test.mosquitto.org"
 	client = mqtt.Client("")
 	client.message_callback_add('EL1/#', on_message_elevator)
 	client.connect(broker)
