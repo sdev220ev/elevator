@@ -91,7 +91,6 @@ def CarManager():
 	client = mqtt.Client("")
 	client.message_callback_add('EL1/#', on_message_elevator)
 	client.connect(broker)
-
 	#client.loop_start()
 	info = client.subscribe("EL1/command/#")
 	
