@@ -72,8 +72,8 @@ def CarManager():
 	totalSteps = 0
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setwarnings(False)
-	CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
-	CarButtonInitialize.CarButtonInitialize() # Set the car buttons for callbacks	.
+	#CarLampInitialize.CarLampInitialize() # Configure GPIO and turn off car lamps.
+	#CarButtonInitialize.CarButtonInitialize() # Set the car buttons for callbacks	.
 
 	# The stepper driver is a class. Create an instance for the lift stepper motor and one for the door stepper motor.
 	Car = StepperDriverClass(id, [31,29,7,5], 26, 24 ) # Create an instance of the stepper motor driver.
