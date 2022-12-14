@@ -35,7 +35,7 @@ CarButtonPins = [0,8,10,36,11,12]
 LSBottomPin   = 7
 LSTopPin      = 8
 
-CarStepWaitTime = .0012
+CarStepWaitTime = .003
 
 # ========================Lift Door Motor Values 
 
